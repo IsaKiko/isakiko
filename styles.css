@@ -4,10 +4,13 @@
     box-sizing: border-box;
 }
 
-html, body {
+html, body, .main {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+}
+
+.main {
+  overflow: hidden;
 }
 
 .menu-item {
@@ -106,13 +109,18 @@ html, body {
 }
 
 .gallery-canvas{
-  position:absolute;
-  top: 100%;
+  position:relative;
+  top: 0;
   width: 100%;
   height: 100%;
+  padding-bottom: 3em;
   overflow: auto;
   background-color: black;
   transition: top 0.5s cubic-bezier(.48,.02,.8,1.19);
+  -webkit-transition: top 0.5s cubic-bezier(.48,.02,.8,1.19);
+  -moz-transition: top 0.5s cubic-bezier(.48,.02,.8,1.19);
+  -ms-transition: top 0.5s cubic-bezier(.48,.02,.8,1.19);
+  -o-transition: top 0.5s cubic-bezier(.48,.02,.8,1.19);
   color: white;
   z-index: 1000;
 }
