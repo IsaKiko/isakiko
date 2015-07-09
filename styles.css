@@ -14,6 +14,7 @@ html, body {
   height: 100%;
   display: block;
   position: relative;
+  background-size:cover;
 }
 
 .background::after {
@@ -25,7 +26,14 @@ html, body {
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -1;   
+  z-index: -1; 
+  background-size:cover;  
+}
+
+.menu-item {
+    position: absolute;
+    top: 0.5em;
+    left: 1em;
 }
 
 .signature-canvas {
