@@ -9,7 +9,7 @@
 
   	<div class="background"></div>
 
-  	<div class="menu-item">
+  	<div class="menu-item" id="notebook">
 		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 		<svg
 		xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -376,6 +376,19 @@
 		</svg>
 </div>
 
+<div class="gallery-canvas" id="gallery">
+	All the content.
+</div>
+
+
+<script type="text/javascript">
+	var ga = document.getElementById("gallery");
+	var nb = document.getElementById("notebook");
+	nb.addEventListener("click", function(e) {
+		ga.style.top = "3em";
+	})
+
+</script>
 
 
   </body>
