@@ -54,7 +54,7 @@ html, body {
   stroke-dasharray: 5000;
   stroke-dashoffset: 5000;
 
- animation: dash 2.5s cubic-bezier(.26,.02,.61,.97) forwards;
+ animation: dash 3s cubic-bezier(.26,.02,.61,.97) forwards;
 }
 
 @keyframes dash {
@@ -62,3 +62,10 @@ html, body {
     stroke-dashoffset: 000;
   }
 }
+
+/*body {
+  background: -webkit-linear-gradient(orange, blue); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(orange, blue);  For Opera 11.1 to 12.0 
+  background: -moz-linear-gradient(orange, blue); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(orange, blue); /* Standard syntax */
+}*/
