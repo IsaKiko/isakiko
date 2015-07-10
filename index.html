@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Isa Kiko</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,900,200italic' rel='stylesheet' type='text/css'>
   </head>
   <body>
   	<div class="main">
@@ -378,44 +379,25 @@
 	</div>
 
 	<div class="gallery-canvas" id="gallery">
-		All the content.
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		end of all the content!
+
+		<div class="gallery-note">
+			<div class="gallery-date">
+				2015/07/10
+			</div>
+			<div class="gallery-title">
+			This is a title
+			</div>
+			<div class="gallery-subtitle">
+			This is a subtitle
+			</div>
+			<div class="gallery-text">
+			This is some content <br>
+			Moar content
+			</div>	
+		</div>
+
+	<hr class="divider">
+
 	</div>
 </div>
 
@@ -423,8 +405,16 @@
 <script type="text/javascript">
 	var ga = document.getElementById("gallery");
 	var nb = document.getElementById("notebook");
+	var gaStatus = 0;
 	nb.addEventListener("click", function(e) {
-		ga.style.top = "calc(-100% + 3em)";
+		if (gaStatus == 0) {
+			ga.style.top = "calc(-100% + 3em)";
+			gaStatus = 1;
+		}
+		else{
+			ga.style.top = "0";
+			gaStatus = 0;
+		}			
 	})
 
 </script>
