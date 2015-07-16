@@ -385,22 +385,89 @@
 				2015/07/10
 			</div>
 			<div class="gallery-title">
-			This is a title
+			Animate your signature
 			</div>
 			<div class="gallery-subtitle">
-			This is a subtitle
+			SVG path animation with varying stroke width (HTML+CSS)
 			</div>
 			<div class="gallery-text">
-			This is some content <br>
-			Moar content
-			</div>	
+			You might have noticed the animated signature on this homepage. I'll admit, this wasn't my idea, but something I first saw on the 2015 <a href='2015.cssconf.com.au'>cssconf</a> homepage and I - naturally - wanted that for myself. <br><br>
+			I quickly noticed that this isn't as straight forward to create as I thought.<br><br>
+			In this tutorial I'll attemp to summarise everything that's necessary to to do this: from creating the SVG using <a href ='https://inkscape.org/en/'> Inkscape</a>, over animating a constant-width stroke based on <a href="https://css-tricks.com/svg-line-animation-works/">this amazing tutorial</a>, to a conversation I had with <a href="https://twitter.com/glenmaddern">Glen Maddern<a/> who gave me the final hints of how to make this work.
+			<br>
+			<br>
+			<div class = "gallery-subheading">Preparing the SVG elements</div>
+			The way to animating any path that doesn't have a constant stroke width starts with creating it first. An easy way of creating an SVG of a signature is to first draw it on a piece of paper, take a photo, and then use a tool to trace over it. A good and free program to create vector graphics is <a href ='https://inkscape.org/en/'> Inkscape</a>. No matter which program you use, you will normally be able to draw Bezier curves that match the outline of your letters. Fill your letters with the colour of your choice. Save the file as an SVG.
+			<br>
+			<br><img src="N1.png" style="width:500px;"><br>
+			<br>
+			Next, use a simple stroke and trace over the centre of the letter. Crank up the path width until the entire letter is covered. Delete the underlying letter and save the new path as an SVG. 
+			<br>
+			<br><img src="N2.png" style="width:500px;"><br>
+			<br>
+			If you open these two files in a text editor, you should find a section embedded in <font color="009999">&lt;path&gt; ... &lt;/path&gt;</font>. This is the bit we need to copy into our HTML file.
+
+			<div class = "gallery-subheading">Constant-width stroke animation</div>
+
+			The trick to animate a path with constant stroke width is to use a dashed line instead of a solid one. The dashes have to be exactly one path length apart (a value that's easiest found by simply trying out different ones). Then, the offset - the location where the first dash is drawn - can be animated.
+			<br>
+			It's important to set the style correctly:<br>
+			fill:none;<br>
+			fill-rule:evenodd;<br>
+			stroke:#000000;<br>
+			stroke-width:40;<br>
+			stroke-linecap:round;<br>
+			<br> 
+			...In our case, this will become the animation of our mask.
+			<br> 
+			<br> 
+
+			<p data-height="210" data-theme-id="16686" data-slug-hash="yNqLVy" data-default-tab="result" data-user="IsaKiko" class='codepen'>See the Pen <a href='http://codepen.io/IsaKiko/pen/yNqLVy/'>yNqLVy</a> by Isabell Kiral-Kornek (<a href='http://codepen.io/IsaKiko'>@IsaKiko</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+			<br> 
+			<br> 
+			<div class = "gallery-subheading">Using the animation as a mask</div>
+			At the moment, it is impossible to animate a path with variable stroke-width. Technically, the stroke of our signature circumscribes it, which means, if we apply the same method as before, we end up with a dash-array circling around our letter. Instead, what we will do is use the animation we just made in order to mask the real signature.<br>
+			There are a few things, that are important here:
+			Especially if we have multiple letters, we want to group all the paths and assign a mask id to them using <br> <font color="009999">&lt;g style="mask: url(#easyMask);"&gt; ... &lt;/g&gt;</font>.<br> We then need to encapsulate the constant-width path in the according mask environment:<br> <font color="009999">&lt;mask id="easyMask"&gt; ... &lt;/mask&gt;</font>. <br>In order to make sure we draw the mask on top of the signature, we also need to assign z-values in CSS.
+
+			<br> 
+			<br> 
+			<p data-height="210" data-theme-id="16686" data-slug-hash="WvKNMe" data-default-tab="result" data-user="IsaKiko" class='codepen'>See the Pen <a href='http://codepen.io/IsaKiko/pen/WvKNMe/'>WvKNMe</a> by Isabell Kiral-Kornek (<a href='http://codepen.io/IsaKiko'>@IsaKiko</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+
+			<div class = "gallery-subheading">The final version</div>
+			The actual signature has obviously a much longer path description. When using several letters, you have to make sure that the mask is still only one path. Draw over the letters as you would move a pen without lifting it from the paper. Below is the example from the front page. 
+			<br>
+			<br>
+			<p data-height="210" data-theme-id="16686" data-slug-hash="vOjZeb" data-default-tab="result" data-user="IsaKiko" class='codepen'>See the Pen <a href='http://codepen.io/IsaKiko/pen/vOjZeb/'>vOjZeb</a> by Isabell Kiral-Kornek (<a href='http://codepen.io/IsaKiko'>@IsaKiko</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+			<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+			Click on the rerun button to rewatch the animation. 
+		</div>	
 		</div>
 
 	<hr class="divider">
-
+	<!-- 
+	<div class="gallery-note">
+				<div class="gallery-date">
+					2015/07/10
+				</div>
+				<div class="gallery-title">
+					This is a title
+				</div>
+				<div class="gallery-subtitle">
+					This is a subtitle
+				</div>
+				<div class="gallery-text">
+					This is some content <br>
+					Moar content
+				</div>	
+			</div>
+		<hr class="divider"> 
+		</div>
 	</div>
-</div>
-
+ -->
 
 <script type="text/javascript">
 	var ga = document.getElementById("gallery");
@@ -422,3 +489,23 @@
 
   </body>
 </html>
+
+
+<!-- 	
+		<div class="gallery-note">
+			<div class="gallery-date">
+				2015/07/10
+			</div>
+			<div class="gallery-title">
+				This is a title
+			</div>
+			<div class="gallery-subtitle">
+				This is a subtitle
+			</div>
+			<div class="gallery-text">
+				This is some content <br>
+				Moar content
+			</div>	
+		</div>
+	<hr class="divider"> 
+-->

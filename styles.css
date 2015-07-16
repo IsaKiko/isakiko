@@ -11,6 +11,14 @@ html, body, .main {
     /*font-family: 'Lato';*/ 
 }
 
+a:link {
+    color: #FFFFCC;
+}
+a:visited {
+    color: #CC9900;
+}
+
+
 .main {
   overflow: hidden;
 }
@@ -155,6 +163,17 @@ html, body, .main {
   font-weight: 400;
   line-height: 1.4;
   padding-top: 1em;
+}
+
+.gallery-text.code{
+  color: 009999;
+}
+
+.gallery-subheading{
+  font-weight: 900;
+  line-height: 1.4;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 hr {
