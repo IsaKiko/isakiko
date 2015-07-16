@@ -56,6 +56,16 @@ a:visited {
     bottom: 0;
     right: 5em;
 }
+@media (max-width: 60em) {
+  .signature-canvas {
+    transform: scale(0.66);
+  }
+}
+@media (max-width: 30em) {
+  .signature-canvas {
+    transform: scale(0.33);
+  }
+}
 
 .filler-mask {
     position: absolute;

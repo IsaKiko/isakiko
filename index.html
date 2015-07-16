@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isa Kiko</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,900,200italic' rel='stylesheet' type='text/css'>
@@ -399,11 +400,11 @@
 			<div class = "gallery-subheading">Preparing the SVG elements</div>
 			The way to animating any path that doesn't have a constant stroke width starts with creating it first. An easy way of creating an SVG of a signature is to first draw it on a piece of paper, take a photo, and then use a tool to trace over it. A good and free program to create vector graphics is <a href ='https://inkscape.org/en/'> Inkscape</a>. No matter which program you use, you will normally be able to draw Bezier curves that match the outline of your letters. Fill your letters with the colour of your choice. Save the file as an SVG.
 			<br>
-			<br><img src="N1.png" style="width:500px;"><br>
+			<br><img src="N1.png" style="width:500px; max-width:100%"><br>
 			<br>
 			Next, use a simple stroke and trace over the centre of the letter. Crank up the path width until the entire letter is covered. Delete the underlying letter and save the new path as an SVG. 
 			<br>
-			<br><img src="N2.png" style="width:500px;"><br>
+			<br><img src="N2.png" style="width:500px; max-width:100%"><br>
 			<br>
 			If you open these two files in a text editor, you should find a section embedded in <font color="009999">&lt;path&gt; ... &lt;/path&gt;</font>. This is the bit we need to copy into our HTML file.
 
