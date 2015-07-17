@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
 }
 
 html, body, .main {
@@ -60,11 +60,19 @@ a:visited {
 @media (max-width: 60em) {
   .signature-canvas {
     transform: scale(0.66);
+    -webkit-transform: scale(0.66);
+    -moz-transform: scale(0.66);
+    -ms-transform: scale(0.66);
+    -o-transform: scale(0.66);
   }
 }
 @media (max-width: 30em) {
   .signature-canvas {
     transform: scale(0.33);
+    -webkit-transform: scale(0.33);
+    -moz-transform: scale(0.33);
+    -ms-transform: scale(0.33);
+    -o-transform: scale(0.33);
   }
 }
 
