@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    webkit-overflow-scrolling: touch;
 }
 
 html, body, .main {
@@ -192,6 +193,7 @@ hr {
     background:#009999;
     background-image: linear-gradient(to right, #009999, #333, #009999);
 }
+
 /*body {
   background: -webkit-linear-gradient(orange, blue); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(orange, blue);  For Opera 11.1 to 12.0 
