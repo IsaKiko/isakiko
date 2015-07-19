@@ -2,11 +2,33 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
 }
 
-html, body {
+html, body, .main {
     width: 100%;
     height: 100%;
+    /*font-family: 'Old Standard TT', serif;*/
+    /*font-family: 'Lato';*/ 
+}
+
+a:link {
+    color: #FFFFCC;
+}
+a:visited {
+    color: #CC9900;
+}
+
+
+.main {
+  overflow: hidden;
+}
+
+.menu-item {
+    position: absolute;
+    top: 0.5em;
+    left: 1em;
+    cursor: pointer;
 }
 
 .background {
@@ -14,6 +36,7 @@ html, body {
   height: 100%;
   display: block;
   position: relative;
+  background-size:cover;
 }
 
 .background::after {
@@ -25,13 +48,32 @@ html, body {
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -1;   
+  z-index: -1; 
+  background-size:cover;  
 }
 
 .signature-canvas {
     position: absolute;
     bottom: 0;
     right: 5em;
+}
+@media (max-width: 60em) {
+  .signature-canvas {
+    transform: scale(0.66);
+    -webkit-transform: scale(0.66);
+    -moz-transform: scale(0.66);
+    -ms-transform: scale(0.66);
+    -o-transform: scale(0.66);
+  }
+}
+@media (max-width: 30em) {
+  .signature-canvas {
+    transform: scale(0.33);
+    -webkit-transform: scale(0.33);
+    -moz-transform: scale(0.33);
+    -ms-transform: scale(0.33);
+    -o-transform: scale(0.33);
+  }
 }
 
 .filler-mask {
@@ -53,8 +95,16 @@ html, body {
 .path {
   stroke-dasharray: 5000;
   stroke-dashoffset: 5000;
-
- animation: dash 2.5s cubic-bezier(.26,.02,.61,.97) forwards;
+  animation: dash 3s cubic-bezier(.26,.02,.61,.97) forwards;
+  animation-delay: 1s;
+  -webkit-animation: dash 3s cubic-bezier(.26,.02,.61,.97) forwards;
+  -webkit-animation-delay: 1s;
+  -moz-animation: dash 3s cubic-bezier(.26,.02,.61,.97) forwards;
+  -moz-animation-delay: 1s;  
+  -ms-animation: dash 3s cubic-bezier(.26,.02,.61,.97) forwards;
+  -ms-animation-delay: 1s;
+  -o-animation: dash 3s cubic-bezier(.26,.02,.61,.97) forwards;
+  -o-animation-delay: 1s;
 }
 
 @keyframes dash {
@@ -62,3 +112,99 @@ html, body {
     stroke-dashoffset: 000;
   }
 }
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 000;
+  }
+}
+
+@-moz-keyframes dash {
+  to {
+    stroke-dashoffset: 000;
+  }
+}
+
+@-ms-keyframes dash {
+  to {
+    stroke-dashoffset: 000;
+  }
+}
+
+@-o-keyframes dash {
+  to {
+    stroke-dashoffset: 000;
+  }
+}
+
+.gallery-canvas{
+  position:relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 3em;
+  overflow: auto;
+  background-color: black;
+  transition: top 0.5s cubic-bezier(.48,.02,.8,1.19);
+  -webkit-transition: top 0.5s cubic-bezier(.48,.02,.8,1.19);
+  -moz-transition: top 0.5s cubic-bezier(.48,.02,.8,1.19);
+  -ms-transition: top 0.5s cubic-bezier(.48,.02,.8,1.19);
+  -o-transition: top 0.5s cubic-bezier(.48,.02,.8,1.19);
+  color: white;
+  z-index: 1000;
+}
+
+.gallery-note{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.2rem;
+  padding: 2em;
+}
+
+.gallery-date{
+  font-style: italic;
+  font-weight: 200;
+}
+
+.gallery-title{
+  font-weight: 900;
+  font-size: 1.4rem; 
+  text-transform: uppercase; 
+  line-height: 1.1;
+}
+
+.gallery-subtitle{
+  font-weight: 200;
+  font-size: 1.4rem;
+  line-height: 1.1;
+}
+
+.gallery-text{
+  font-weight: 400;
+  line-height: 1.4;
+  padding-top: 1em;
+}
+
+.gallery-text.code{
+  color: 009999;
+}
+
+.gallery-subheading{
+  font-weight: 900;
+  line-height: 1.4;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background:#009999;
+    background-image: linear-gradient(to right, #009999, #333, #009999);
+}
+
+/*body {
+  background: -webkit-linear-gradient(orange, blue); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(orange, blue);  For Opera 11.1 to 12.0 
+  background: -moz-linear-gradient(orange, blue); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(orange, blue); /* Standard syntax */
+}*/
